@@ -1,0 +1,38 @@
+<div class="article-item">
+
+    <div class="article-title">
+        {{article.title}}
+    </div>
+
+    <div class="article-info">
+        <li class="info-item">{{article.tag}}</li>
+        <li class="info-divider">·</li>
+        <li class="info-item">Added by &nbsp;
+            <span class="info-mark">{{article.author}}</span>
+        </li>
+        <li class="info-divider">·</li>
+        <li class="info-item">{{article.date}}</li>
+    </div>
+
+    <div class="btn-group">
+        <button type="button" class="button2" (click)="deleteArticle(article.id)">Delete</button>
+        <div class="divider"> | </div>
+        <button type="button"  class="button2" (click)="editArticle(article)">Edit</button>
+    </div>
+
+    <div class="article-image">
+        <img src="../assets/{{article.imgUrl}}" alt="" />
+    </div>
+
+    <div class="article-content">
+       {{article.content}}
+    </div>
+
+    <div class="readmore-btn">
+        <a routerLink = "details/{{article.id}}">
+            <button type="button" class="button">READ MORE</button>
+        </a>
+        
+    </div>
+    
+</div>

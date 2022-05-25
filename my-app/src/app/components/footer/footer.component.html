@@ -1,0 +1,4 @@
+<footer class="footer">
+        <button *ngIf="startDisplayIndex > 0" type="button" (click)="gotoPrevArticles()" class="previous">previous</button>
+        <button *ngIf="(startDisplayIndex + numberOfArticlesPerPage) < articlesLength" type="button" (click)="gotoNextArticles()" class="next">next</button>
+</footer>

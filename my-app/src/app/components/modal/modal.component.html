@@ -1,0 +1,57 @@
+<div class="modal__overlay"  [ngClass]="{'show-modal': isModalOpen$ | async}">
+    <div class="modal">
+        <div class="modal__content">
+            <h2 class="title">Add/Edit articles</h2>
+            <form [formGroup]="form" class="inputs__container">
+                <input
+                    type="text"
+                    formControlName="title"
+                    class="input"
+                    name="title"
+                    placeholder="Please enter title" />
+                <input
+                    type="text"
+                    formControlName="tag"
+                    class="input"
+                    name="tag"
+                    placeholder="Please enter tag" />
+                <input
+                    type="text"
+                    formControlName="author"
+                    class="input"
+                    name="author"
+                    placeholder="Please enter author" />
+                <input
+                    type="text"
+                    formControlName="date" 
+                    class="input"
+                    name="date"
+                    placeholder="Please enter date" />
+                <input
+                    type="text"
+                    formControlName="imgUrl" 
+                    class="input"
+                    name="imgUrl"
+                    placeholder="Please enter image url" />
+                <input
+                    type="text"
+                    formControlName="saying"
+                    class="input" 
+                    name="saying"
+                    placeholder="Please enter saying" />
+                <textarea
+                    formControlName="content"
+                    class="textarea" 
+                    name="content" 
+                    cols={28}
+                    rows={7}
+                    placeholder="Please enter content"> </textarea>
+            </form>
+           
+            <div className="modal__buttons">
+                <button type="button" class="button" (click)="closeModal()">Cancel</button>
+                <button type="button" class="button button--pink" (click)="saveArticle()">Save</button>
+            </div>
+        </div>
+    </div>
+</div>

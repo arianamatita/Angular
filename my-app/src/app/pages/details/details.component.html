@@ -1,0 +1,33 @@
+<div class="article-item">
+
+    <div class="article-title">
+        {{article.title}}
+    </div>
+
+    <div class="article-info">
+        <li class="info-item">{{article.tag}}</li>
+        <li class="info-divider">·</li>
+        <li class="info-item">Added by &nbsp;
+            <span class="info-mark">{{article.author}}</span>
+        </li>
+        <li class="info-divider">·</li>
+        <li class="info-item">{{article.date}}</li>
+    </div>
+
+   
+    <div class="article-image">
+        <img src="../assets/{{article.imgUrl}}" alt="" />
+    </div>
+
+    <div class="article-content">
+       <p>{{article.content}}</p>
+       <p class="saying"> {{article.saying}}</p>
+       <p>{{article.content}}</p>
+    </div>
+
+    <footer class="footer2">
+        <a *ngIf="prevArticleId !== 0" routerLink="/details/{{prevArticleId}}" class="previous">previous article</a>
+        <a *ngIf="nextArticleId !== 0" routerLink="/details/{{nextArticleId}}" class="next">next article</a>
+    </footer>
+    
+</div>

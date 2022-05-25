@@ -1,0 +1,19 @@
+<ng-template #displayArticles>
+    <div class="button-box">
+        <button class="button" (click)="openModal()">+ ADD ARTICLE</button>
+    </div>
+    
+    <ul *ngFor="let article of filteredArticles">
+        <app-article [article]="article" (getArticles)="getArticles()"></app-article>
+    </ul>
+    
+    <app-footer
+        (newGotoEvent)="setStartDisplayIndex($event)"
+        [numberOfArticlesPerPage]="numberOfArticlesPerPage"
+        [startDisplayIndex]="startDisplayIndex"
+        [articlesLength]="articlesLength">
+    </app-footer>
+    <app-modal (getArticles)="getArticles()"></app-modal>
+</ng-template>
+
+<p *ngIf="isLoading; else displayArticles">Loading ...</p>
